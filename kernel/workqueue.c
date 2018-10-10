@@ -2087,6 +2087,9 @@ __acquires(&pool->lock)
 		       current->comm, preempt_count(), task_pid_nr(current),
 		       worker->current_func);
 		debug_show_held_locks(current);
+#ifdef CONFIG_BUG_ON_DATA_CORRUPTION
+		BUG();
+#endif
 		dump_stack();
 	}
 
