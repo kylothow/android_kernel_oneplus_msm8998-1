@@ -2350,7 +2350,9 @@ void composite_suspend(struct usb_gadget *gadget)
 	cdev->suspended = 1;
 	spin_unlock_irqrestore(&cdev->lock, flags);
 
+#ifndef CONFIG_BOARD_ONEPLUS5
 	usb_gadget_vbus_draw(gadget, 2);
+#endif
 }
 
 void composite_resume(struct usb_gadget *gadget)

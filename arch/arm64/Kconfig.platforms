@@ -77,6 +77,10 @@ config ARCH_MSM8998
 	This enables support for the MSM8998 chipset. If you do not
 	wish to build a kernel that runs on this chipset, say 'N' here.
 
+config BOARD_ONEPLUS5
+	bool ""
+	depends on ARCH_QCOM
+
 config ARCH_MSMHAMSTER
 	bool "Enable Support for Qualcomm Technologies Inc MSMHAMSTER"
 	depends on ARCH_QCOM
